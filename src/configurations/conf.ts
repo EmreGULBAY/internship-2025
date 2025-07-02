@@ -1,4 +1,6 @@
-export const config = [
+import { configType } from "../types/animalType";
+
+export const config: configType[]   = [
   {
     type: "dog",
     name: "Rex",
@@ -39,3 +41,7 @@ export const config = [
     ownerState: "CA",
   },
 ];
+
+export const addToConfig = (animal: configType ) => {
+    config.push(animal)
+}

@@ -1,4 +1,4 @@
-import { configType } from "../types/animalType";
+import { configType, User } from "../types/animalType";
 
 export const config: configType[] = [
   {
@@ -42,13 +42,25 @@ export const config: configType[] = [
   },
 ];
 
+export const user: User[] = [
+  {
+    username: "emregulbay",
+    password: "123",
+    userId: 1,
+  },
+];
+
 export const addToConfig = (animal: configType) => {
   config.push(animal);
 };
 
 export const getConfig = async (animalType?: string) => {
   if (animalType) {
-    return config.filter((x) => (x.type === animalType));
+    return config.filter((x) => x.type === animalType);
   }
   return config;
 };
+
+export const checkUserId = (userId: number) => {
+    return !!(user.find(u => u.userId === userId))
+}

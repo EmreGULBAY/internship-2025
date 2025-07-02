@@ -12,3 +12,9 @@ export type configType = {
     ownerCity: string,
     ownerState: string,
   }
+
+  export type User = {
+    username: string,
+    password: string,
+    userId: number
+  }

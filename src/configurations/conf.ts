@@ -1,6 +1,6 @@
 import { configType } from "../types/animalType";
 
-export const config: configType[]   = [
+export const config: configType[] = [
   {
     type: "dog",
     name: "Rex",
@@ -42,6 +42,13 @@ export const config: configType[]   = [
   },
 ];
 
-export const addToConfig = (animal: configType ) => {
-    config.push(animal)
-}
+export const addToConfig = (animal: configType) => {
+  config.push(animal);
+};
+
+export const getConfig = async (animalType?: string) => {
+  if (animalType) {
+    return config.filter((x) => (x.type === animalType));
+  }
+  return config;
+};

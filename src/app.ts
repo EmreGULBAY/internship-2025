@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction, Express } from "express";
+import { getAnimalFromConfig } from "./controllers/getAnimal.controller";
 
 export const createServer = () => {
   const app = express();
@@ -16,6 +17,8 @@ export const createServer = () => {
   app.post("/", (req: Request, res: Response) => {
     res.status(200).json({ success: true });
   });
+
+  app.post("/getAnimal", getAnimalFromConfig)
 
   return app;
 };
